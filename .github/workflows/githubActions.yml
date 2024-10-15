@@ -23,11 +23,11 @@ jobs:
         with:
           node-version: '16'
 
-      - name: Install Fastlane
-        run: gem install fastlane
+      - name: bundle install
+        run: gem install bundler
 
       - name: Install SwiftLint
-        run: brew install swiftlint
+        run: bundle install
 
       - name: Run Fastlane
-        run: fastlane all
+        run: bundler exec fastlane all
