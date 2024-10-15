@@ -1,0 +1,26 @@
+#!/bin/bash
+
+# Check for staged files
+echo "Running pre-commit checks..."
+
+
+echo "Pre-commit hook is running..."
+# Your other checks
+exit 0
+
+# Example: Prevent committing changes with TODO comments
+if git diff --cached --name-only | xargs grep -n "TODO"; then
+  echo "Error: Please remove TODO comments before committing."
+  exit 1
+fi
+
+# Example: Run linting (replace 'your-linter-command' with your actual linting command)
+if ! your-linter-command; then
+  echo "Linting failed. Please fix the issues before committing."
+  exit 1
+fi
+
+# If everything passes
+echo "All checks passed. Proceeding with commit."
+exit 0
+
