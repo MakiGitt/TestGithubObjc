@@ -28,7 +28,8 @@ platform :ios do
   desc "Run SwiftLint to check code quality"
   lane :swiftlintCheck do
      swiftlint(
-      strict: false,              # Fail on any SwiftLint issues
+      strict: false,        
+      executable: "Pods/SwiftLint/swiftlint",
       output_file: "swiftlint_report.txt",  # Optional:Output lint report to a file
       ignore_exit_status: false   # Exit with an error if there are violations
     )
