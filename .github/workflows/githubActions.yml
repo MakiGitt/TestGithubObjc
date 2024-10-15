@@ -18,11 +18,6 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
-      - name: Set up Ruby
-        uses: ruby/setup-ruby@v1
-        with:
-          ruby-version: '2.7' # or your required Ruby version
-
       - name: Set up Node.js
         uses: actions/setup-node@v2
         with:
